@@ -1,0 +1,2 @@
+git is  an version control system and github store and allow to you to code similtanously with your team 
+and git can be a resume for software or web developer or any type of programmer as it show case your project 
