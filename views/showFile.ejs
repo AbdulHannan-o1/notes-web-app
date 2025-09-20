@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,4 +18,88 @@
         </div>
     </div>
 </body>
-</html> 
+</html>  -->
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Note View - Dark Theme</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#3b82f6",
+            "primary-hover": "#2563eb",
+            "secondary": "#334155",
+            "secondary-hover": "#475569",
+            "background-light": "#f1f5f9",
+            "background-dark": "#1e293b",
+            "card-dark": "#334155",
+            "text-light": "#f8fafc",
+            "text-dark": "#0f172a",
+            "text-muted-dark": "#94a3b8"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "lg": "0.5rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-dark font-display text-text-light">
+  <div class="flex flex-col min-h-screen">
+    <main class="flex-grow p-4 sm:p-6 md:p-8">
+      <div class="max-w-3xl mx-auto">
+        <!-- Title -->
+        <div class="mb-12">
+          <h1 class="text-4xl sm:text-5xl font-bold text-text-light mb-4"><%= filename %></h1>
+          <p class="text-text-muted-dark text-lg leading-relaxed">
+            <%= fileData %>
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-3">
+          <a href="/" 
+            class="w-full sm:w-auto px-6 py-3 rounded-full text-base font-semibold bg-secondary text-text-light hover:bg-secondary-hover transition-colors duration-300">
+            Back to All Notes
+          </a>
+          
+          <a href="/edit/<%= filename %>"
+            class="w-full sm:w-auto px-6 py-3 rounded-full text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors duration-300">
+            Rename Note
+          </a>
+          
+          <a href="/updateFile/<%= filename %>"
+            class="w-full sm:w-auto px-6 py-3 rounded-full text-base font-semibold bg-primary text-white hover:bg-primary-hover transition-colors duration-300">
+            Update Note
+          </a>
+
+          <a href="/delete/<%= filename %>"
+            class="w-full sm:w-auto px-6 py-3 rounded-full text-base font-semibold bg-red-600 text-white hover:bg-red-700 transition-colors duration-300">
+            Delete Note
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
